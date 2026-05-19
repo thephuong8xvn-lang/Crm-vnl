@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
+import { useAuth } from './AuthContext';
 
 const GlobalStateContext = createContext(null);
 
@@ -11,6 +12,8 @@ function handleSupabaseError(error, fallbackMsg = 'Đã xảy ra lỗi. Vui lòn
 }
 
 export function GlobalStateProvider({ children }) {
+  const { user } = useAuth();
+
   // ─── State ────────────────────────────────────────────────────────────
   const [leads, setLeads] = useState([]);
   const [opportunities, setOpportunities] = useState([]);
@@ -152,16 +155,33 @@ export function GlobalStateProvider({ children }) {
     }
   }, []);
 
-  // Fetch tất cả khi mount
+  // Fetch tất cả khi user đăng nhập, reset khi đăng xuất
   useEffect(() => {
-    fetchLeads();
-    fetchOpportunities();
-    fetchTasks();
-    fetchPayments();
-    fetchStages();
-    fetchProfiles();
-    fetchTeams();
-  }, [fetchLeads, fetchOpportunities, fetchTasks, fetchPayments, fetchStages, fetchProfiles, fetchTeams]);
+    if (user) {
+      fetchLeads();
+      fetchOpportunities();
+      fetchTasks();
+      fetchPayments();
+      fetchStages();
+      fetchProfiles();
+      fetchTeams();
+    } else {
+      // Reset data khi đăng xuất
+      setLeads([]);
+      setOpportunities([]);
+      setTasks([]);
+      setPayments([]);
+      setStages([]);
+      setProfiles([]);
+      setTeams([]);
+      setLoadingLeads(false);
+      setLoadingOpportunities(false);
+      setLoadingTasks(false);
+      setLoadingPayments(false);
+      setLoadingStages(false);
+      setLoadingProfiles(false);
+    }
+  }, [user, fetchLeads, fetchOpportunities, fetchTasks, fetchPayments, fetchStages, fetchProfiles, fetchTeams]);
 
   // ─── LEADS (Khách hàng) ───────────────────────────────────────────────
 
