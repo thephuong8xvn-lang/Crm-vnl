@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cơ hội bán hàng - Yến Sào Vĩnh Hưng</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#e9dece",
+                      "on-surface": "#1f1b15",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f9efe5",
+                      "tertiary-fixed": "#d5e3ff",
+                      "tertiary-container": "#7ba3e1",
+                      "surface-dim": "#e2d9cf",
+                      "primary-fixed": "#ffdea6",
+                      "primary": "#7b5800",
+                      "tertiary": "#355f99",
+                      "surface-container-highest": "#eae1d7",
+                      "on-background": "#1f1b15",
+                      "on-primary-fixed": "#271900",
+                      "on-tertiary-fixed-variant": "#17477f",
+                      "on-tertiary-fixed": "#001c3b",
+                      "surface-bright": "#fff8f3",
+                      "on-secondary-container": "#696255",
+                      "tertiary-fixed-dim": "#a7c8ff",
+                      "secondary": "#645e51",
+                      "primary-container": "#c89a3d",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#f6ece2",
+                      "surface-tint": "#7b5800",
+                      "on-primary-container": "#4b3400",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#201b11",
+                      "on-primary-fixed-variant": "#5d4200",
+                      "inverse-primary": "#f1bf5e",
+                      "on-secondary-fixed-variant": "#4c463a",
+                      "surface-container-low": "#fcf2e8",
+                      "on-surface-variant": "#4f4637",
+                      "outline-variant": "#d2c5b1",
+                      "on-tertiary-container": "#00386e",
+                      "on-primary": "#ffffff",
+                      "outline": "#817665",
+                      "secondary-fixed": "#ece1d1",
+                      "primary-fixed-dim": "#f1bf5e",
+                      "error": "#ba1a1a",
+                      "surface": "#fff8f3",
+                      "surface-container-high": "#f0e7dc",
+                      "secondary-fixed-dim": "#cfc5b6",
+                      "on-secondary": "#ffffff",
+                      "background": "#fff8f3",
+                      "surface-variant": "#eae1d7",
+                      "inverse-surface": "#343029"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin": "32px",
+                      "container-max": "1440px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "26px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #F9F5EE; }
+        .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); }
+        .kanban-col-bg { background: rgba(0,0,0,0.02); }
+        .custom-scrollbar::-webkit-scrollbar { height: 8px; width: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.02); border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(200, 154, 61, 0.3); border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(200, 154, 61, 0.6); }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:block w-[230px] h-screen sticky left-0 top-0 overflow-y-auto bg-white/85 dark:bg-surface-container/80 backdrop-blur-md border-r border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] z-40">
+<div class="flex flex-col py-8 px-4 gap-6 h-full">
+<div class="flex items-center gap-3 px-2 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-lg">YH</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-bold">Yến Sào Vĩnh Hưng</h1>
+<p class="text-xs text-on-surface-variant opacity-80">Premium CRM</p>
+</div>
+</div>
+<ul class="flex flex-col gap-2 font-body-md text-body-md flex-grow">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                        Tổng quan
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-primary font-bold border-r-4 border-primary bg-secondary-container/50 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        Cơ hội
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">assignment</span>
+                        Công việc
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+                        Khách hàng
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">payments</span>
+                        Thanh toán
+                    </a>
+</li>
+<li class="mt-auto">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+                        Cài đặt
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+<!-- TopNavBar equivalent header -->
+<header class="h-[60px] sticky top-0 z-30 w-full bg-white/85 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex justify-between items-center px-gutter shrink-0">
+<h2 class="font-headline-lg text-headline-lg text-[#3F3A33]">Cơ hội bán hàng</h2>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-primary transition-colors focus-within:ring-2 focus-within:ring-primary/20 rounded-full p-1"><span class="material-symbols-outlined">notifications</span></button>
+<button class="hover:text-primary transition-colors focus-within:ring-2 focus-within:ring-primary/20 rounded-full p-1"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</header>
+<!-- Filter Bar -->
+<div class="glass-panel border-b border-[#E3D7C8] py-3 px-gutter flex justify-between items-center shrink-0 z-20 relative shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1 text-[13px] text-on-surface-variant hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-secondary-container/30">
+                    Nhân viên: Tất cả
+                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="flex items-center gap-1 text-[13px] text-on-surface-variant hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-secondary-container/30">
+                    Phân khúc: Tất cả
+                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="flex items-center gap-1 text-[13px] text-on-surface-variant hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-secondary-container/30">
+                    Sản phẩm: Tất cả
+                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<button class="bg-[#C89A3D] text-white px-4 py-2 rounded-[8px] text-[13px] font-medium hover:bg-[#b08735] transition-colors flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Thêm cơ hội
+            </button>
+</div>
+<!-- Kanban Board Area -->
+<div class="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar p-gutter pt-6 bg-transparent">
+<div class="flex gap-6 h-full items-start pb-4 w-max">
+<!-- Column 1: Mới -->
+<div class="kanban-col-bg rounded-[12px] p-3 w-[280px] max-h-full flex flex-col border border-outline-variant/10">
+<div class="flex justify-between items-center mb-3 px-1 shrink-0">
+<h3 class="text-[13px] font-semibold text-[#3F3A33] uppercase tracking-wide">Mới</h3>
+<span class="bg-surface-variant text-on-surface-variant text-[11px] font-medium px-2 py-0.5 rounded-full">3</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-1 flex flex-col gap-2.5">
+<!-- Card 1 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Gói nhập hàng tháng 6</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Vũ Thu Trang</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">210M</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 rounded-full border border-tertiary-container/30">Đại lý</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-[9px] font-bold">H</div>
+<span class="text-[11px] text-on-surface-variant">Hoa</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>30/05</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Set quà VIP dịp 1/6</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Lê Bảo Anh</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">65M</span>
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] px-2 py-0.5 rounded-full border border-primary-container/30">VIP</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center text-[9px] font-bold">M</div>
+<span class="text-[11px] text-on-surface-variant">Minh</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>01/06</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Thăm dò sản phẩm mới</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Đặng Quốc Khánh</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">35M</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full border border-outline-variant/30">Khách lẻ</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[9px] font-bold">L</div>
+<span class="text-[11px] text-on-surface-variant">Lan</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>05/06</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Đang tư vấn -->
+<div class="kanban-col-bg rounded-[12px] p-3 w-[280px] max-h-full flex flex-col border border-outline-variant/10">
+<div class="flex justify-between items-center mb-3 px-1 shrink-0">
+<h3 class="text-[13px] font-semibold text-[#3F3A33] uppercase tracking-wide">Đang tư vấn</h3>
+<span class="bg-surface-variant text-on-surface-variant text-[11px] font-medium px-2 py-0.5 rounded-full">2</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-1 flex flex-col gap-2.5">
+<!-- Card 4 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Hợp đồng đại lý miền Nam</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Nguyễn Thùy Linh</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">280M</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 rounded-full border border-tertiary-container/30">Đại lý</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-inverse-primary text-on-primary-fixed flex items-center justify-center text-[9px] font-bold">H</div>
+<span class="text-[11px] text-on-surface-variant">Hùng</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-error">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>25/05</span>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Hợp đồng Q3 Hương Việt</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Nguyễn Thùy Linh</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">280M</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 rounded-full border border-tertiary-container/30">Đại lý</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-inverse-primary text-on-primary-fixed flex items-center justify-center text-[9px] font-bold">H</div>
+<span class="text-[11px] text-on-surface-variant">Hùng</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>28/05</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 3: Gửi báo giá -->
+<div class="kanban-col-bg rounded-[12px] p-3 w-[280px] max-h-full flex flex-col border border-outline-variant/10">
+<div class="flex justify-between items-center mb-3 px-1 shrink-0">
+<h3 class="text-[13px] font-semibold text-[#3F3A33] uppercase tracking-wide">Gửi báo giá</h3>
+<span class="bg-surface-variant text-on-surface-variant text-[11px] font-medium px-2 py-0.5 rounded-full">2</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-1 flex flex-col gap-2.5">
+<!-- Card 6 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Combo quà doanh nghiệp</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Phạm Ngọc Hưng</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">320M</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 rounded-full border border-tertiary-container/30">Đại lý</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-[9px] font-bold">H</div>
+<span class="text-[11px] text-on-surface-variant">Hoa</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-error">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>20/05</span>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Gói An Nhiên đặc sản</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Vũ Thu Trang</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">210M</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 rounded-full border border-tertiary-container/30">Đại lý</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center text-[9px] font-bold">M</div>
+<span class="text-[11px] text-on-surface-variant">Minh</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>22/05</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 4: Đàm phán -->
+<div class="kanban-col-bg rounded-[12px] p-3 w-[280px] max-h-full flex flex-col border border-outline-variant/10">
+<div class="flex justify-between items-center mb-3 px-1 shrink-0">
+<h3 class="text-[13px] font-semibold text-[#3F3A33] uppercase tracking-wide">Đàm phán</h3>
+<span class="bg-surface-variant text-on-surface-variant text-[11px] font-medium px-2 py-0.5 rounded-full">2</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-1 flex flex-col gap-2.5">
+<!-- Card 8 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Hợp đồng An Phát Q2</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Trần Minh Quân</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">450M</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 rounded-full border border-tertiary-container/30">Đại lý</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-inverse-primary text-on-primary-fixed flex items-center justify-center text-[9px] font-bold">H</div>
+<span class="text-[11px] text-on-surface-variant">Hùng</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-error">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>18/05</span>
+</div>
+</div>
+</div>
+<!-- Card 9 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#E3D7C8] hover:border-[#C89A3D] transition-colors cursor-pointer group">
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors">Đại lý chiến lược miền Bắc</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Vũ Thu Trang</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">210M</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 rounded-full border border-tertiary-container/30">Đại lý</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[9px] font-bold">L</div>
+<span class="text-[11px] text-on-surface-variant">Lan</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-error">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>19/05</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 5: Chốt đơn -->
+<div class="kanban-col-bg rounded-[12px] p-3 w-[280px] max-h-full flex flex-col border border-outline-variant/10">
+<div class="flex justify-between items-center mb-3 px-1 shrink-0">
+<h3 class="text-[13px] font-semibold text-primary uppercase tracking-wide">Chốt đơn</h3>
+<span class="bg-primary-container/20 text-primary-container text-[11px] font-medium px-2 py-0.5 rounded-full">1</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-1 flex flex-col gap-2.5">
+<!-- Card 10 -->
+<div class="glass-panel rounded-[12px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border border-[#C89A3D]/50 hover:border-[#C89A3D] transition-colors cursor-pointer group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-8 h-8 bg-primary-container/10 flex items-center justify-center rounded-bl-lg">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h4 class="text-[14px] font-medium text-[#3F3A33] mb-1 line-clamp-2 leading-snug group-hover:text-primary transition-colors pr-6">Yến tinh chế xuất khẩu</h4>
+<div class="flex items-center gap-1 text-[12px] text-[#8B8375] mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Trần Minh Quân</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-[#C89A3D] font-semibold text-[13px]">450M</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 rounded-full border border-tertiary-container/30">Đại lý</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-inverse-primary text-on-primary-fixed flex items-center justify-center text-[9px] font-bold">H</div>
+<span class="text-[11px] text-on-surface-variant">Hùng</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px]">calendar_today</span>
+<span>15/05</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 6: Thất bại -->
+<div class="kanban-col-bg rounded-[12px] p-3 w-[280px] max-h-full flex flex-col border border-outline-variant/10 opacity-70">
+<div class="flex justify-between items-center mb-3 px-1 shrink-0">
+<h3 class="text-[13px] font-semibold text-on-surface-variant uppercase tracking-wide">Thất bại</h3>
+<span class="bg-surface-variant text-on-surface-variant text-[11px] font-medium px-2 py-0.5 rounded-full">1</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-1 flex flex-col gap-2.5">
+<!-- Card 11 -->
+<div class="bg-surface-container-high rounded-[12px] p-4 border border-outline-variant/30 grayscale-[50%]">
+<h4 class="text-[14px] font-medium text-on-surface-variant mb-1 line-clamp-2 leading-snug">Báo giá tháng 3 từ chối</h4>
+<div class="flex items-center gap-1 text-[12px] text-on-surface-variant/70 mb-2">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span class="truncate">Khách ẩn</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-on-surface-variant font-semibold text-[13px]">120M</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full border border-outline-variant/30">Đại lý</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - Vĩnh Hưng Heritage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#ece1d1",
+                "on-secondary-fixed-variant": "#4c463a",
+                "outline-variant": "#d2c5b1",
+                "on-background": "#1f1b15",
+                "surface": "#fff8f3",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#7ba3e1",
+                "secondary-fixed-dim": "#cfc5b6",
+                "outline": "#817665",
+                "inverse-surface": "#343029",
+                "on-primary-fixed": "#271900",
+                "surface-container-highest": "#eae1d7",
+                "surface-container": "#f6ece2",
+                "on-secondary-container": "#696255",
+                "surface-container-low": "#fcf2e8",
+                "primary-fixed": "#ffdea6",
+                "primary": "#7b5800",
+                "on-surface-variant": "#4f4637",
+                "inverse-on-surface": "#f9efe5",
+                "error-container": "#ffdad6",
+                "surface-container-high": "#f0e7dc",
+                "primary-fixed-dim": "#f1bf5e",
+                "secondary": "#645e51",
+                "surface-dim": "#e2d9cf",
+                "on-secondary-fixed": "#201b11",
+                "tertiary": "#355f99",
+                "on-surface": "#1f1b15",
+                "on-primary": "#ffffff",
+                "surface-tint": "#7b5800",
+                "on-secondary": "#ffffff",
+                "on-primary-container": "#4b3400",
+                "on-error": "#ffffff",
+                "secondary-container": "#e9dece",
+                "surface-variant": "#eae1d7",
+                "on-tertiary-fixed": "#001c3b",
+                "error": "#ba1a1a",
+                "on-tertiary": "#ffffff",
+                "inverse-primary": "#f1bf5e",
+                "surface-bright": "#fff8f3",
+                "on-primary-fixed-variant": "#5d4200",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#00386e",
+                "background": "#fff8f3",
+                "tertiary-fixed-dim": "#a7c8ff",
+                "primary-container": "#c89a3d",
+                "tertiary-fixed": "#d5e3ff",
+                "on-tertiary-fixed-variant": "#17477f"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "container-max": "1440px",
+                "margin": "32px",
+                "base": "4px"
+        },
+        "fontFamily": {
+                "headline-md": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "headline-lg": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-md": ["Inter"]
+        },
+        "fontSize": {
+                "headline-md": ["18px", {"lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                "headline-lg-mobile": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "headline-lg": ["26px", {"lineHeight": "1.5", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                "label-sm": ["12px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    background-color: #F9F5EE;
+    color: #1f1b15;
+  }
+  .glass-layer-1 {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px -15px rgba(129, 118, 101, 0.04);
+  }
+  .glass-border {
+    border: 1px solid #E3D7C8;
+  }
+</style>
+</head>
+<body class="font-body-md text-body-md antialiased h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[230px] border-r border-outline-variant/30 bg-surface/85 backdrop-blur-md shadow-[0_20px_40px_-15px_rgba(129,118,101,0.1)] flex flex-col py-8 gap-y-2 z-50">
+<div class="px-gutter mb-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold">VH</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Vĩnh Hưng Heritage</h1>
+<p class="font-label-sm text-label-sm text-outline">Premium Bird's Nest</p>
+</div>
+</div>
+<button class="mt-6 w-full py-2 bg-primary-container text-on-primary rounded-lg font-body-md hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+        New Entry
+      </button>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-primary-container/10 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+        Overview
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-primary-container/10 transition-colors" href="#">
+<span class="material-symbols-outlined">stars</span>
+        Opportunities
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-primary-container/10 transition-colors" href="#">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+        Tasks
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-primary-container/10 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+        Customers
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-primary-container/10 transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+        Payments
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold bg-primary-container/20 border-r-4 border-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+        Settings
+      </a>
+</nav>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 h-[60px] left-[230px] z-40 border-b border-outline-variant/30 bg-surface/85 backdrop-blur-md flex justify-between items-center px-gutter">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Cài đặt</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+        AD
+      </div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-[230px] mt-[60px] p-margin w-full max-w-[calc(1440px-230px)] mx-auto flex gap-gutter h-[calc(100vh-60px)] overflow-hidden">
+<!-- Left Settings Nav -->
+<div class="w-[220px] shrink-0 glass-layer-1 glass-border rounded-xl p-2 flex flex-col h-full overflow-y-auto">
+<div class="px-4 pt-4 pb-2">
+<span class="text-[11px] text-[#8B8375] font-semibold uppercase tracking-wider">HỆ THỐNG</span>
+</div>
+<nav class="flex flex-col gap-1 px-2">
+<a class="px-4 py-2.5 rounded-lg bg-[rgba(200,154,61,0.1)] text-primary-container font-medium text-[14px] flex items-center gap-2" href="#">
+          Người dùng
+        </a>
+<a class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 font-normal text-[14px] transition-colors" href="#">
+          Vai trò &amp; Nhóm
+        </a>
+<a class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 font-normal text-[14px] transition-colors" href="#">
+          Quy trình bán hàng
+        </a>
+<a class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 font-normal text-[14px] transition-colors" href="#">
+          Sản phẩm
+        </a>
+</nav>
+<div class="px-4 pt-6 pb-2">
+<span class="text-[11px] text-[#8B8375] font-semibold uppercase tracking-wider">TÀI KHOẢN</span>
+</div>
+<nav class="flex flex-col gap-1 px-2 mb-4">
+<a class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 font-normal text-[14px] transition-colors" href="#">
+          Hồ sơ cá nhân
+        </a>
+<a class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 font-normal text-[14px] transition-colors" href="#">
+          Bảo mật
+        </a>
+</nav>
+</div>
+<!-- Right Content Area -->
+<div class="flex-1 glass-layer-1 glass-border rounded-xl p-gutter flex flex-col h-full overflow-hidden">
+<!-- Header Row -->
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-lg text-headline-lg text-[#3F3A33]">Người dùng</h3>
+<button class="bg-primary-container text-white px-4 py-2 rounded-lg text-[14px] font-medium flex items-center gap-2 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+          Thêm người dùng
+        </button>
+</div>
+<!-- Table -->
+<div class="flex-1 overflow-auto rounded-lg border border-outline-variant/30">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-variant/30 sticky top-0 backdrop-blur-sm z-10">
+<tr>
+<th class="px-4 py-3 text-[12px] text-[#8B8375] font-medium border-b border-outline-variant/30">Tên</th>
+<th class="px-4 py-3 text-[12px] text-[#8B8375] font-medium border-b border-outline-variant/30">Email</th>
+<th class="px-4 py-3 text-[12px] text-[#8B8375] font-medium border-b border-outline-variant/30">Vai trò</th>
+<th class="px-4 py-3 text-[12px] text-[#8B8375] font-medium border-b border-outline-variant/30">Nhóm</th>
+<th class="px-4 py-3 text-[12px] text-[#8B8375] font-medium border-b border-outline-variant/30">Trạng thái</th>
+<th class="px-4 py-3 text-[12px] text-[#8B8375] font-medium border-b border-outline-variant/30 text-right">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-4 py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center text-[12px] font-semibold shrink-0">AD</div>
+<span class="font-medium text-on-background">Nguyễn Vĩnh Hưng</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">admin@yensaovinhung.vn</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded text-[12px] font-medium bg-[rgba(200,154,61,0.12)] text-primary-container">Admin</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">—</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+<span class="text-[13px] text-on-surface-variant">Hoạt động</span>
+</div>
+</td>
+<td class="px-4 py-4 text-right">
+<button class="text-outline hover:text-primary transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-4 py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-[12px] font-semibold shrink-0">TN</div>
+<span class="font-medium text-on-background">Trần Thị Ngọc</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">ngoc.tran@yensaovinhung.vn</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded text-[12px] font-medium bg-[rgba(139,131,117,0.12)] text-[#8B8375]">Trưởng nhóm</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">Nhóm Miền Nam</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+<span class="text-[13px] text-on-surface-variant">Hoạt động</span>
+</div>
+</td>
+<td class="px-4 py-4 text-right">
+<button class="text-outline hover:text-primary transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="text-outline hover:text-error transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-4 py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-[12px] font-semibold shrink-0">NH</div>
+<span class="font-medium text-on-background">Nguyễn Minh Hùng</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">hung.nguyen@yensaovinhung.vn</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded text-[12px] font-medium bg-[rgba(227,215,200,0.5)] text-[#3F3A33]">Sales</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">Nhóm Miền Nam</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+<span class="text-[13px] text-on-surface-variant">Hoạt động</span>
+</div>
+</td>
+<td class="px-4 py-4 text-right">
+<button class="text-outline hover:text-primary transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="text-outline hover:text-error transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-4 py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-[12px] font-semibold shrink-0">TH</div>
+<span class="font-medium text-on-background">Trần Thị Hoa</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">hoa.tran@yensaovinhung.vn</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded text-[12px] font-medium bg-[rgba(227,215,200,0.5)] text-[#3F3A33]">Sales</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">Nhóm Miền Nam</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+<span class="text-[13px] text-on-surface-variant">Hoạt động</span>
+</div>
+</td>
+<td class="px-4 py-4 text-right">
+<button class="text-outline hover:text-primary transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="text-outline hover:text-error transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-4 py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center text-[12px] font-semibold shrink-0">NL</div>
+<span class="font-medium text-on-background">Nguyễn Thị Lan</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">lan.nguyen@yensaovinhung.vn</td>
+<td class="px-4 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded text-[12px] font-medium bg-[rgba(227,215,200,0.5)] text-[#3F3A33]">Sales</span>
+</td>
+<td class="px-4 py-4 text-on-surface-variant text-[13px]">Nhóm Miền Nam</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+<span class="text-[13px] text-on-surface-variant">Không hoạt động</span>
+</div>
+</td>
+<td class="px-4 py-4 text-right">
+<button class="text-outline hover:text-primary transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="text-outline hover:text-error transition-colors p-1 opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</body></html>

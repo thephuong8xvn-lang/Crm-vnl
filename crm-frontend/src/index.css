@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --color-secondary-container: #e9dece;
+  --color-on-surface: #1f1b15;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-inverse-on-surface: #f9efe5;
+  --color-tertiary-fixed: #d5e3ff;
+  --color-tertiary-container: #7ba3e1;
+  --color-surface-dim: #e2d9cf;
+  --color-primary-fixed: #ffdea6;
+  --color-primary: #7b5800;
+  --color-tertiary: #355f99;
+  --color-surface-container-highest: #eae1d7;
+  --color-on-background: #1f1b15;
+  --color-on-primary-fixed: #271900;
+  --color-on-tertiary-fixed-variant: #17477f;
+  --color-on-tertiary-fixed: #001c3b;
+  --color-surface-bright: #fff8f3;
+  --color-on-secondary-container: #696255;
+  --color-tertiary-fixed-dim: #a7c8ff;
+  --color-secondary: #645e51;
+  --color-primary-container: #c89a3d;
+  --color-on-tertiary: #ffffff;
+  --color-on-error-container: #93000a;
+  --color-surface-container: #f6ece2;
+  --color-surface-tint: #7b5800;
+  --color-on-primary-container: #4b3400;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-secondary-fixed: #201b11;
+  --color-on-primary-fixed-variant: #5d4200;
+  --color-inverse-primary: #f1bf5e;
+  --color-on-secondary-fixed-variant: #4c463a;
+  --color-surface-container-low: #fcf2e8;
+  --color-on-surface-variant: #4f4637;
+  --color-outline-variant: #d2c5b1;
+  --color-on-tertiary-container: #00386e;
+  --color-on-primary: #ffffff;
+  --color-outline: #817665;
+  --color-secondary-fixed: #ece1d1;
+  --color-primary-fixed-dim: #f1bf5e;
+  --color-error: #ba1a1a;
+  --color-surface: #fff8f3;
+  --color-surface-container-high: #f0e7dc;
+  --color-secondary-fixed-dim: #cfc5b6;
+  --color-on-secondary: #ffffff;
+  --color-background: #fff8f3;
+  --color-surface-variant: #eae1d7;
+  --color-inverse-surface: #343029;
+  
+  --spacing-gutter: 24px;
+  --spacing-margin: 32px;
+  --spacing-container-max: 1440px;
+  --spacing-base: 4px;
+
+  --font-headline-lg-mobile: "Inter";
+  --font-headline-lg: "Inter";
+  --font-label-sm: "Inter";
+  --font-headline-md: "Inter";
+  --font-body-md: "Inter";
+  
+  --text-headline-lg-mobile: 22px;
+  --text-headline-lg-mobile--line-height: 1.4;
+  --text-headline-lg-mobile--font-weight: 500;
+  
+  --text-headline-lg: 26px;
+  --text-headline-lg--line-height: 1.5;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 500;
+  
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 1.5;
+  
+  --text-headline-md: 18px;
+  --text-headline-md--line-height: 1.5;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 500;
+  
+  --text-body-md: 14px;
+  --text-body-md--line-height: 1.5;
+}
+
+body {
+  background-color: #F9F5EE;
+  font-family: 'Inter', sans-serif;
+  color: #3F3A33;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.kanban-col-bg { background: rgba(0,0,0,0.02); }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #E3D7C8;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #C89A3D;
+}
+
+.input-glass {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #E3D7C8;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+.input-glass:focus {
+  outline: none;
+  border-color: #C89A3D;
+}

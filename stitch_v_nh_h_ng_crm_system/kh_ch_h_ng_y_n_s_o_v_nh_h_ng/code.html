@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khách hàng - Yến Sào Vĩnh Hưng</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#c89a3d",
+                        "surface-container-highest": "#eae1d7",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1f1b15",
+                        "surface-container": "#f6ece2",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d5e3ff",
+                        "on-tertiary-container": "#00386e",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#4f4637",
+                        "inverse-primary": "#f1bf5e",
+                        "on-tertiary-fixed": "#001c3b",
+                        "surface-dim": "#e2d9cf",
+                        "on-secondary-fixed": "#201b11",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f3",
+                        "on-secondary-container": "#696255",
+                        "tertiary": "#355f99",
+                        "background": "#fff8f3",
+                        "surface-bright": "#fff8f3",
+                        "surface-container-low": "#fcf2e8",
+                        "tertiary-fixed-dim": "#a7c8ff",
+                        "primary-fixed": "#ffdea6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#f0e7dc",
+                        "primary-fixed-dim": "#f1bf5e",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#343029",
+                        "secondary-container": "#e9dece",
+                        "outline": "#817665",
+                        "outline-variant": "#d2c5b1",
+                        "on-background": "#1f1b15",
+                        "surface-variant": "#eae1d7",
+                        "secondary": "#645e51",
+                        "tertiary-container": "#7ba3e1",
+                        "primary": "#7b5800",
+                        "surface-tint": "#7b5800",
+                        "inverse-on-surface": "#f9efe5",
+                        "on-primary-container": "#4b3400",
+                        "on-tertiary-fixed-variant": "#17477f",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#4c463a",
+                        "on-primary-fixed": "#271900",
+                        "secondary-fixed-dim": "#cfc5b6",
+                        "on-primary-fixed-variant": "#5d4200",
+                        "secondary-fixed": "#ece1d1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "4px",
+                        "margin": "32px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["26px", { "lineHeight": "1.5", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["18px", { "lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F9F5EE; }
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E3D7C8;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .btn-primary {
+            background-color: #C89A3D;
+            color: #ffffff;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #1f1b15;
+            border: 1px solid #C89A3D;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(200, 154, 61, 0.05);
+        }
+        .input-glass {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E3D7C8;
+            border-radius: 8px;
+            transition: border-color 0.2s;
+        }
+        .input-glass:focus {
+            outline: none;
+            border-color: #C89A3D;
+        }
+        /* Custom Checkbox */
+        .custom-checkbox {
+            appearance: none;
+            background-color: transparent;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #d2c5b1;
+            border-radius: 4px;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+        }
+        .custom-checkbox::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #C89A3D;
+            background-color: #C89A3D;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+        .custom-checkbox:checked {
+            border-color: #C89A3D;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="w-[230px] h-screen sticky left-0 top-0 overflow-y-auto bg-white/85 dark:bg-surface-container/80 backdrop-blur-md border-r border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col py-8 px-4 gap-6 hidden md:flex z-40">
+<div class="flex items-center gap-3 px-2 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold text-xl shrink-0">Y</div>
+<div>
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-bold truncate">Yến Sào Vĩnh Hưng</div>
+<div class="text-xs text-on-surface-variant/70">Premium CRM</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Tổng quan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span>Cơ hội</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>Công việc</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-primary font-bold border-r-4 border-primary bg-secondary-container/50 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Khách hàng</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Thanh toán</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container/30 transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Cài đặt</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="h-[60px] sticky top-0 z-50 w-full bg-white/85 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex justify-between items-center px-gutter md:ml-0">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg text-[#3F3A33] md:hidden">Khách hàng</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors hover:bg-black/5">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors hover:bg-black/5">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 p-margin flex flex-col gap-6 max-w-container-max mx-auto w-full">
+<!-- Page Header & Actions -->
+<div class="flex flex-col gap-4">
+<h1 class="font-headline-lg text-headline-lg text-[#3F3A33] hidden md:block">Khách hàng</h1>
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center py-4 gap-4">
+<!-- Search -->
+<div class="relative w-full lg:w-[320px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#8B8375]">search</span>
+<input class="input-glass w-full pl-10 pr-4 py-2.5 text-sm placeholder-[#8B8375]" placeholder="Tìm theo tên, SĐT, email..." type="text"/>
+</div>
+<!-- Filters & Actions -->
+<div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+<div class="relative">
+<select class="input-glass appearance-none pl-4 pr-10 py-2.5 text-sm cursor-pointer w-full sm:w-auto">
+<option>Phân khúc: Tất cả</option>
+<option>Đại lý</option>
+<option>VIP</option>
+<option>Khách lẻ</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#8B8375] pointer-events-none text-sm">expand_more</span>
+</div>
+<div class="relative">
+<select class="input-glass appearance-none pl-4 pr-10 py-2.5 text-sm cursor-pointer w-full sm:w-auto">
+<option>Sản phẩm: Tất cả</option>
+<option>Yến tinh chế</option>
+<option>Yến chưng</option>
+<option>Yến thô</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#8B8375] pointer-events-none text-sm">expand_more</span>
+</div>
+<div class="relative">
+<select class="input-glass appearance-none pl-4 pr-10 py-2.5 text-sm cursor-pointer w-full sm:w-auto">
+<option>Người phụ trách: Tất cả</option>
+<option>Nguyễn Hùng</option>
+<option>Nguyễn Lan</option>
+<option>Trần Hoa</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#8B8375] pointer-events-none text-sm">expand_more</span>
+</div>
+<div class="flex items-center gap-2 ml-auto lg:ml-4">
+<button class="btn-secondary px-4 py-2.5 text-sm font-medium whitespace-nowrap">Xuất CSV</button>
+<button class="btn-secondary px-4 py-2.5 text-sm font-medium whitespace-nowrap">Nhập CSV</button>
+<button class="btn-primary px-4 py-2.5 text-sm font-medium whitespace-nowrap">+ Thêm khách hàng</button>
+</div>
+</div>
+</div>
+<!-- Summary Row -->
+<div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<div class="glass-panel rounded-full px-4 py-1.5 text-[12px] text-[#8B8375] whitespace-nowrap flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8B8375]"></span>
+                        Tổng cộng: 6 khách hàng
+                    </div>
+<div class="glass-panel rounded-full px-4 py-1.5 text-[12px] text-[#8B8375] whitespace-nowrap flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        3 Đại lý
+                    </div>
+<div class="glass-panel rounded-full px-4 py-1.5 text-[12px] text-[#8B8375] whitespace-nowrap flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                        1 VIP
+                    </div>
+<div class="glass-panel rounded-full px-4 py-1.5 text-[12px] text-[#8B8375] whitespace-nowrap flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                        2 Khách lẻ
+                    </div>
+</div>
+</div>
+<!-- Data Table Card -->
+<div class="glass-panel rounded-[16px] overflow-hidden flex flex-col mt-2">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[1000px]">
+<thead>
+<tr class="border-b border-[#E3D7C8]">
+<th class="py-3 px-5 text-[12px] text-[#8B8375] font-medium w-12 text-center">
+<input class="custom-checkbox mx-auto" type="checkbox"/>
+</th>
+<th class="py-3 px-5 text-[12px] text-[#8B8375] font-medium">Tên khách hàng</th>
+<th class="py-3 px-5 text-[12px] text-[#8B8375] font-medium">Phân khúc</th>
+<th class="py-3 px-5 text-[12px] text-[#8B8375] font-medium">Sản phẩm quan tâm</th>
+<th class="py-3 px-5 text-[12px] text-[#8B8375] font-medium">Người phụ trách</th>
+<th class="py-3 px-5 text-[12px] text-[#8B8375] font-medium">Giá trị dự kiến</th>
+<th class="py-3 px-5 text-[12px] text-[#8B8375] font-medium">Ngày tạo</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<!-- Row 1 Selected -->
+<tr class="border-b border-[#E3D7C8] hover:bg-[#C89A3D]/[0.03] transition-colors relative bg-[#C89A3D]/[0.02]">
+<td class="absolute left-0 top-0 bottom-0 w-[3px] bg-[#C89A3D]"></td>
+<td class="py-3.5 px-5 text-center">
+<input checked="" class="custom-checkbox mx-auto" type="checkbox"/>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-medium">TL</div>
+<div>
+<div class="font-medium text-[#1f1b15]">Nguyễn Thùy Linh</div>
+<div class="text-[12px] text-[#8B8375]">Hương Việt</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-secondary-container/50 text-secondary text-xs font-medium">Đại lý</span>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến tinh chế</span>
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến chưng</span>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-container flex items-center justify-center text-white text-[10px]">NH</div>
+<span class="text-on-surface-variant">Nguyễn Hùng</span>
+</div>
+</td>
+<td class="py-3.5 px-5 font-medium text-[#C89A3D]">280,000,000 đ</td>
+<td class="py-3.5 px-5 text-on-surface-variant">12/05/2026</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-[#E3D7C8] hover:bg-[#C89A3D]/[0.03] transition-colors">
+<td class="py-3.5 px-5 text-center">
+<input class="custom-checkbox mx-auto" type="checkbox"/>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-medium">MQ</div>
+<div>
+<div class="font-medium text-[#1f1b15]">Trần Minh Quân</div>
+<div class="text-[12px] text-[#8B8375]">An Phát</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-secondary-container/50 text-secondary text-xs font-medium">Đại lý</span>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến thô</span>
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến tinh chế</span>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-container flex items-center justify-center text-white text-[10px]">NH</div>
+<span class="text-on-surface-variant">Nguyễn Hùng</span>
+</div>
+</td>
+<td class="py-3.5 px-5 font-medium text-[#1f1b15]">450,000,000 đ</td>
+<td class="py-3.5 px-5 text-on-surface-variant">10/05/2026</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-[#E3D7C8] hover:bg-[#C89A3D]/[0.03] transition-colors">
+<td class="py-3.5 px-5 text-center">
+<input class="custom-checkbox mx-auto" type="checkbox"/>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-medium">BA</div>
+<div>
+<div class="font-medium text-[#1f1b15]">Lê Bảo Anh</div>
+<div class="text-[12px] text-[#8B8375] italic">Cá nhân</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-[#C89A3D]/12 text-[#C89A3D] text-xs font-medium">VIP</span>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến chưng</span>
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến tinh chế</span>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-[#E58F65] flex items-center justify-center text-white text-[10px]">NL</div>
+<span class="text-on-surface-variant">Nguyễn Lan</span>
+</div>
+</td>
+<td class="py-3.5 px-5 font-medium text-[#1f1b15]">65,000,000 đ</td>
+<td class="py-3.5 px-5 text-on-surface-variant">08/05/2026</td>
+</tr>
+<!-- Row 4 -->
+<tr class="border-b border-[#E3D7C8] hover:bg-[#C89A3D]/[0.03] transition-colors">
+<td class="py-3.5 px-5 text-center">
+<input class="custom-checkbox mx-auto" type="checkbox"/>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-medium">NH</div>
+<div>
+<div class="font-medium text-[#1f1b15]">Phạm Ngọc Hưng</div>
+<div class="text-[12px] text-[#8B8375]">Sài Gòn Event</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-secondary-container/50 text-secondary text-xs font-medium">Đại lý</span>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến chưng</span>
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến tinh chế</span>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-[#645E51] flex items-center justify-center text-white text-[10px]">TH</div>
+<span class="text-on-surface-variant">Trần Hoa</span>
+</div>
+</td>
+<td class="py-3.5 px-5 font-medium text-[#1f1b15]">320,000,000 đ</td>
+<td class="py-3.5 px-5 text-on-surface-variant">07/05/2026</td>
+</tr>
+<!-- Row 5 -->
+<tr class="border-b border-[#E3D7C8] hover:bg-[#C89A3D]/[0.03] transition-colors">
+<td class="py-3.5 px-5 text-center">
+<input class="custom-checkbox mx-auto" type="checkbox"/>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-medium">TT</div>
+<div>
+<div class="font-medium text-[#1f1b15]">Vũ Thu Trang</div>
+<div class="text-[12px] text-[#8B8375]">An Nhiên</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-secondary-container/50 text-secondary text-xs font-medium">Đại lý</span>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến thô</span>
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến chưng</span>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-[#E58F65] flex items-center justify-center text-white text-[10px]">NL</div>
+<span class="text-on-surface-variant">Nguyễn Lan</span>
+</div>
+</td>
+<td class="py-3.5 px-5 font-medium text-[#1f1b15]">210,000,000 đ</td>
+<td class="py-3.5 px-5 text-on-surface-variant">05/05/2026</td>
+</tr>
+<!-- Row 6 -->
+<tr class="border-b border-[#E3D7C8] hover:bg-[#C89A3D]/[0.03] transition-colors">
+<td class="py-3.5 px-5 text-center">
+<input class="custom-checkbox mx-auto" type="checkbox"/>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-medium">QK</div>
+<div>
+<div class="font-medium text-[#1f1b15]">Đặng Quốc Khánh</div>
+<div class="text-[12px] text-[#8B8375] italic">Cá nhân</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-outline-variant/30 text-on-surface-variant text-xs font-medium">Khách lẻ</span>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 border border-[#E3D7C8] rounded text-xs text-on-surface-variant">Yến chưng</span>
+</div>
+</td>
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-[#645E51] flex items-center justify-center text-white text-[10px]">TH</div>
+<span class="text-on-surface-variant">Trần Hoa</span>
+</div>
+</td>
+<td class="py-3.5 px-5 font-medium text-[#1f1b15]">35,000,000 đ</td>
+<td class="py-3.5 px-5 text-on-surface-variant">03/05/2026</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 bg-white/40 border-t border-[#E3D7C8]">
+<div class="text-sm text-[#8B8375]">Hiển thị 1–6 / 6 khách hàng</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-black/5 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-[#C89A3D]/10 text-[#C89A3D] font-medium text-sm">1</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-black/5 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

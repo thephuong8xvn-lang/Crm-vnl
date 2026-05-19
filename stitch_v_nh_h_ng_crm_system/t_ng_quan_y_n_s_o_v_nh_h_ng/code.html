@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard — Tổng quan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#f0e7dc",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f9efe5",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1f1b15",
+                        "secondary-container": "#e9dece",
+                        "surface": "#fff8f3",
+                        "secondary-fixed": "#ece1d1",
+                        "inverse-primary": "#f1bf5e",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#cfc5b6",
+                        "primary-fixed-dim": "#f1bf5e",
+                        "outline": "#817665",
+                        "inverse-surface": "#343029",
+                        "on-secondary-fixed": "#201b11",
+                        "tertiary": "#355f99",
+                        "outline-variant": "#d2c5b1",
+                        "on-surface-variant": "#4f4637",
+                        "tertiary-fixed-dim": "#a7c8ff",
+                        "tertiary-container": "#7ba3e1",
+                        "primary-container": "#c89a3d",
+                        "error": "#ba1a1a",
+                        "primary": "#7b5800",
+                        "surface-container": "#f6ece2",
+                        "surface-tint": "#7b5800",
+                        "on-tertiary-fixed-variant": "#17477f",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#001c3b",
+                        "background": "#fff8f3",
+                        "tertiary-fixed": "#d5e3ff",
+                        "on-secondary-container": "#696255",
+                        "on-primary-container": "#4b3400",
+                        "on-surface": "#1f1b15",
+                        "on-primary-fixed": "#271900",
+                        "surface-container-low": "#fcf2e8",
+                        "secondary": "#645e51",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f3",
+                        "on-primary-fixed-variant": "#5d4200",
+                        "primary-fixed": "#ffdea6",
+                        "surface-variant": "#eae1d7",
+                        "surface-container-highest": "#eae1d7",
+                        "surface-dim": "#e2d9cf",
+                        "on-tertiary-container": "#00386e",
+                        "on-secondary-fixed-variant": "#4c463a",
+                        "success": "#3A8F68",
+                        "warning": "#D96C3F"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["18px", { "lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["26px", { "lineHeight": "1.5", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F9F5EE; }
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid #E3D7C8;
+            box-shadow: 0 4px 20px 0 rgba(63, 58, 51, 0.04);
+        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="font-body-md text-body-md text-on-surface antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col py-margin px-6 bg-white/85 dark:bg-surface-container-highest/85 backdrop-blur-[10px] fixed left-0 top-0 h-screen w-[230px] border-r border-outline-variant/30 shadow-[0_4px_20px_0_rgba(63,58,51,0.04)] z-20">
+<div class="mb-8">
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Yến Sào</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Premium CRM</p>
+</div>
+<ul class="space-y-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-primary dark:text-primary-fixed-dim font-bold active:scale-95 duration-200 transition-colors bg-secondary-container/50 dark:bg-secondary-fixed-dim/20" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Tổng quan</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-secondary-container/50 dark:hover:bg-secondary-fixed-dim/20 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Cơ hội</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-secondary-container/50 dark:hover:bg-secondary-fixed-dim/20 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span>Công việc</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-secondary-container/50 dark:hover:bg-secondary-fixed-dim/20 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Khách hàng</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-secondary-container/50 dark:hover:bg-secondary-fixed-dim/20 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Thanh toán</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-4 border-t border-outline-variant/30">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-secondary-container/50 dark:hover:bg-secondary-fixed-dim/20 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Cài đặt</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="hidden md:flex justify-between items-center h-20 px-margin bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-[10px] fixed top-0 right-0 left-[230px] z-10 border-b border-outline-variant/20">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface dark:text-on-background">Tổng quan</h2>
+<p class="font-body-md text-body-md text-[#817665]">Tình hình trong 7 ngày gần nhất</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-on-surface-variant hover:text-primary transition-colors active:opacity-80 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:text-primary transition-colors active:opacity-80 duration-150">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img alt="Quản trị viên" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZvm_bnjO_MI3QuS5lBdz7z49fzph6SDj_zL7U6uETzKnDrtE6zYtXPkl4l2JbZDWwFwHhYaM9IdSEh9aW-q_vQDvSBfJptK8as3KKQxodYHHxsh_5c6yHFVR0QO-MIByaZvwxg2D1WfansgRcdlJrN5sgRMnIDEhILP1TnDMcZ3KXcDOxBTdnXxuHrGx5Sqm0eMXc6tczJYcV9ML9Fv0p0S0XDL4asZUk4JenM1nJcgUuinteZRqzT5JLAfen-im9WorWxddwNqY"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="md:ml-[230px] pt-28 px-margin pb-margin min-h-screen">
+<div class="max-w-container-max mx-auto space-y-gutter">
+<!-- ROW 1: Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="glass-card rounded-2xl p-6">
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Khách hàng mới</p>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold">12</span>
+</div>
+<p class="font-label-sm text-label-sm text-success font-medium">+3 so với tuần trước</p>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Cơ hội đang mở</p>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold">28</span>
+</div>
+<p class="font-label-sm text-label-sm text-warning font-medium">5 cần theo dõi gấp</p>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Giá trị Pipeline</p>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg text-primary-container font-semibold">2.4 tỷ</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">VND dự kiến</p>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Doanh thu tháng này</p>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold">380 triệu</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">VND đã thanh toán</p>
+</div>
+</div>
+<!-- ROW 2: Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left: Area Chart -->
+<div class="glass-card rounded-2xl p-6 lg:col-span-7 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-[#3F3A33] mb-6">Doanh thu theo tuần</h3>
+<div class="flex-grow min-h-[250px] relative w-full h-full">
+<canvas id="revenueChart"></canvas>
+</div>
+</div>
+<!-- Right: Bar Chart -->
+<div class="glass-card rounded-2xl p-6 lg:col-span-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-[#3F3A33] mb-6">Cơ hội theo giai đoạn</h3>
+<div class="flex-grow min-h-[250px] relative w-full h-full">
+<canvas id="pipelineChart"></canvas>
+</div>
+</div>
+</div>
+<!-- ROW 3: Lists -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Left: Recent Opportunities -->
+<div class="glass-card rounded-2xl p-6">
+<h3 class="font-headline-md text-headline-md text-[#3F3A33] mb-4">Cơ hội mới nhất</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-high/50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-medium">NT</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Đơn hàng quà tặng sỉ</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Nguyễn Thị Thu</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md font-semibold text-primary-container">45.000.000 ₫</p>
+<span class="inline-block px-2 py-1 rounded text-[10px] bg-secondary-container/50 text-on-surface-variant">Gửi báo giá</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-high/50 transition-colors border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/30 text-on-tertiary-container flex items-center justify-center font-medium">HV</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Tổ yến tinh chế 500g</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Hoàng Văn Hải</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md font-semibold text-primary-container">22.500.000 ₫</p>
+<span class="inline-block px-2 py-1 rounded text-[10px] bg-surface-container-high text-on-surface-variant">Đang tư vấn</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-high/50 transition-colors border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center font-medium">LP</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Hợp đồng đại lý cấp 2</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Lê Phương</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md font-semibold text-primary-container">120.000.000 ₫</p>
+<span class="inline-block px-2 py-1 rounded text-[10px] bg-primary-container/20 text-primary-container">Đàm phán</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-high/50 transition-colors border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-medium">TC</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Yến rút lông nguyên tổ</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Trần Chung</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md font-semibold text-primary-container">8.500.000 ₫</p>
+<span class="inline-block px-2 py-1 rounded text-[10px] bg-surface-container-high text-on-surface-variant">Mới</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Tasks To Do -->
+<div class="glass-card rounded-2xl p-6">
+<h3 class="font-headline-md text-headline-md text-[#3F3A33] mb-4">Việc cần làm hôm nay</h3>
+<div class="space-y-4">
+<div class="flex gap-4 p-3 rounded-lg hover:bg-surface-container-high/50 transition-colors">
+<div class="mt-1">
+<span class="inline-block px-2 py-1 rounded text-[10px] font-medium bg-warning/20 text-warning">Cao</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-body-md font-medium text-on-surface">Gửi hợp đồng sửa đổi</p>
+<div class="flex justify-between items-center mt-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Công ty TNHH Phú Quý</p>
+<p class="font-label-sm text-label-sm text-warning">14:00</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 p-3 rounded-lg hover:bg-surface-container-high/50 transition-colors border-t border-outline-variant/20">
+<div class="mt-1">
+<span class="inline-block px-2 py-1 rounded text-[10px] font-medium bg-secondary-container text-on-secondary-container">TB</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-body-md font-medium text-on-surface">Gọi xác nhận đơn hàng</p>
+<div class="flex justify-between items-center mt-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Chị Hoa - Quận 7</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">15:30</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 p-3 rounded-lg hover:bg-surface-container-high/50 transition-colors border-t border-outline-variant/20">
+<div class="mt-1">
+<span class="inline-block px-2 py-1 rounded text-[10px] font-medium bg-warning/20 text-warning">Cao</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-body-md font-medium text-on-surface">Duyệt chiết khấu đại lý mới</p>
+<div class="flex justify-between items-center mt-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Đại lý miền Trung</p>
+<p class="font-label-sm text-label-sm text-warning">17:00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Chart.js Configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false, drawBorder: false }, ticks: { color: '#817665', font: { family: 'Inter', size: 12 } } },
+                    y: { grid: { color: '#E3D7C8', borderDash: [5, 5], drawBorder: false }, ticks: { color: '#817665', font: { family: 'Inter', size: 12 } } }
+                }
+            };
+
+            // Revenue Area Chart
+            const ctxRev = document.getElementById('revenueChart').getContext('2d');
+            let gradientRev = ctxRev.createLinearGradient(0, 0, 0, 400);
+            gradientRev.addColorStop(0, 'rgba(200, 154, 61, 0.4)');
+            gradientRev.addColorStop(1, 'rgba(200, 154, 61, 0.0)');
+
+            new Chart(ctxRev, {
+                type: 'line',
+                data: {
+                    labels: ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'],
+                    datasets: [{
+                        label: 'Doanh thu',
+                        data: [45, 62, 38, 71, 55, 80, 49],
+                        borderColor: '#C89A3D',
+                        backgroundColor: gradientRev,
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#fff',
+                        pointBorderColor: '#C89A3D',
+                        pointRadius: 4
+                    }]
+                },
+                options: chartOptions
+            });
+
+            // Pipeline Bar Chart
+            const ctxPipe = document.getElementById('pipelineChart').getContext('2d');
+            new Chart(ctxPipe, {
+                type: 'bar',
+                data: {
+                    labels: ['Mới', 'Đang tư vấn', 'Gửi báo giá', 'Đàm phán', 'Chốt đơn'],
+                    datasets: [{
+                        label: 'Số lượng',
+                        data: [8, 6, 7, 4, 3],
+                        backgroundColor: '#C89A3D',
+                        borderRadius: 4,
+                        barThickness: 24
+                    }]
+                },
+                options: {
+                    ...chartOptions,
+                    indexAxis: 'y',
+                    scales: {
+                        x: { grid: { color: '#E3D7C8', borderDash: [5, 5], drawBorder: false }, ticks: { color: '#817665', font: { family: 'Inter', size: 12 } } },
+                        y: { grid: { display: false, drawBorder: false }, ticks: { color: '#4f4637', font: { family: 'Inter', size: 12 } } }
+                    }
+                }
+            });
+        });
+    </script>
+</body></html>
