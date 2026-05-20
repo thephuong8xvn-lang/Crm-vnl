@@ -24,17 +24,10 @@ export function AuthProvider({ children }) {
   };
 
   useEffect(() => {
-    // Lấy session hiện tại
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      if (session?.user) {
-        loadProfile(session.user.id).finally(() => setLoading(false));
-      } else {
-        setLoading(false);
-      }
-    });
-
-    // Lắng nghe thay đổi auth
+    // Supabase v2: dùng onAuthStateChange làm nguồn duy nhất cho session.
+    // Sự kiện INITIAL_SESSION tự động bắn khi listener được đăng ký,
+    // đảm bảo setLoading(false) luôn được gọi dù có session hay không.
+    // Tránh race condition khi dùng song song với getSession() trên Vercel.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (_event, session) => {
         setSession(session);
@@ -43,6 +36,7 @@ export function AuthProvider({ children }) {
         } else {
           setProfile(null);
         }
+        setLoading(false);
       }
     );
 
