@@ -23,17 +23,18 @@ export function GlobalStateProvider({ children }) {
   const [profiles, setProfiles] = useState([]);
   const [teams, setTeams] = useState([]);
 
-  const [loadingLeads, setLoadingLeads] = useState(true);
-  const [loadingOpportunities, setLoadingOpportunities] = useState(true);
-  const [loadingTasks, setLoadingTasks] = useState(true);
-  const [loadingPayments, setLoadingPayments] = useState(true);
-  const [loadingStages, setLoadingStages] = useState(true);
-  const [loadingProfiles, setLoadingProfiles] = useState(true);
+  const [loadingLeads, setLoadingLeads] = useState(false);
+  const [loadingOpportunities, setLoadingOpportunities] = useState(false);
+  const [loadingTasks, setLoadingTasks] = useState(false);
+  const [loadingPayments, setLoadingPayments] = useState(false);
+  const [loadingStages, setLoadingStages] = useState(false);
+  const [loadingProfiles, setLoadingProfiles] = useState(false);
 
   // ─── Fetch functions ──────────────────────────────────────────────────
 
   const fetchLeads = useCallback(async () => {
     setLoadingLeads(true);
+    const t = setTimeout(() => setLoadingLeads(false), 15000);
     try {
       const { data, error } = await supabase
         .from('leads')
@@ -44,12 +45,14 @@ export function GlobalStateProvider({ children }) {
     } catch (err) {
       console.error('Lỗi tải khách hàng:', err.message);
     } finally {
+      clearTimeout(t);
       setLoadingLeads(false);
     }
   }, []);
 
   const fetchOpportunities = useCallback(async () => {
     setLoadingOpportunities(true);
+    const t = setTimeout(() => setLoadingOpportunities(false), 15000);
     try {
       const { data, error } = await supabase
         .from('opportunities')
@@ -65,12 +68,14 @@ export function GlobalStateProvider({ children }) {
     } catch (err) {
       console.error('Lỗi tải cơ hội:', err.message);
     } finally {
+      clearTimeout(t);
       setLoadingOpportunities(false);
     }
   }, []);
 
   const fetchTasks = useCallback(async () => {
     setLoadingTasks(true);
+    const t = setTimeout(() => setLoadingTasks(false), 15000);
     try {
       const { data, error } = await supabase
         .from('tasks')
@@ -86,12 +91,14 @@ export function GlobalStateProvider({ children }) {
     } catch (err) {
       console.error('Lỗi tải công việc:', err.message);
     } finally {
+      clearTimeout(t);
       setLoadingTasks(false);
     }
   }, []);
 
   const fetchPayments = useCallback(async () => {
     setLoadingPayments(true);
+    const t = setTimeout(() => setLoadingPayments(false), 15000);
     try {
       const { data, error } = await supabase
         .from('payments')
@@ -106,12 +113,14 @@ export function GlobalStateProvider({ children }) {
     } catch (err) {
       console.error('Lỗi tải thanh toán:', err.message);
     } finally {
+      clearTimeout(t);
       setLoadingPayments(false);
     }
   }, []);
 
   const fetchStages = useCallback(async () => {
     setLoadingStages(true);
+    const t = setTimeout(() => setLoadingStages(false), 15000);
     try {
       const { data, error } = await supabase
         .from('pipeline_stages')
@@ -122,12 +131,14 @@ export function GlobalStateProvider({ children }) {
     } catch (err) {
       console.error('Lỗi tải giai đoạn:', err.message);
     } finally {
+      clearTimeout(t);
       setLoadingStages(false);
     }
   }, []);
 
   const fetchProfiles = useCallback(async () => {
     setLoadingProfiles(true);
+    const t = setTimeout(() => setLoadingProfiles(false), 15000);
     try {
       const { data, error } = await supabase
         .from('profiles')
@@ -138,6 +149,7 @@ export function GlobalStateProvider({ children }) {
     } catch (err) {
       console.error('Lỗi tải hồ sơ người dùng:', err.message);
     } finally {
+      clearTimeout(t);
       setLoadingProfiles(false);
     }
   }, []);

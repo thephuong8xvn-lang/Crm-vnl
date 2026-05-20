@@ -25,18 +25,17 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     // Supabase v2: dùng onAuthStateChange làm nguồn duy nhất cho session.
-    // Sự kiện INITIAL_SESSION tự động bắn khi listener được đăng ký,
-    // đảm bảo setLoading(false) luôn được gọi dù có session hay không.
-    // Tránh race condition khi dùng song song với getSession() trên Vercel.
+    // KHÔNG await loadProfile - gọi setLoading(false) ngay khi biết session,
+    // tránh app bị kẹt "Đang tải..." khi query profiles bị chậm/lỗi mạng.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
+      (_event, session) => {
         setSession(session);
+        setLoading(false);
         if (session?.user) {
-          await loadProfile(session.user.id);
+          loadProfile(session.user.id);
         } else {
           setProfile(null);
         }
-        setLoading(false);
       }
     );
 
