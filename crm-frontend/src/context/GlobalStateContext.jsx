@@ -364,10 +364,16 @@ export function GlobalStateProvider({ children }) {
   };
 
   const deleteProfile = async (id) => {
-    // Chỉ xóa auth user — trigger cascade sẽ xóa profile
-    const { error } = await supabase.auth.admin.deleteUser(id);
-    if (error) handleSupabaseError(error, 'Không thể xóa người dùng.');
-    setProfiles(prev => prev.filter(p => p.id !== id));
+    // Soft-delete: đánh dấu inactive thay vì xóa auth user
+    // (auth.admin.deleteUser yêu cầu service_role key, không dùng được ở frontend)
+    const { data: updated, error } = await supabase
+      .from('profiles')
+      .update({ status: 'inactive' })
+      .eq('id', id)
+      .select()
+      .single();
+    if (error) handleSupabaseError(error, 'Không thể vô hiệu hóa người dùng.');
+    setProfiles(prev => prev.map(p => p.id === id ? updated : p));
   };
 
   // ─── TEAMS (Nhóm) ─────────────────────────────────────────────────────
